@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/diaryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:hint="日记标题将显示在这里"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/diaryContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="日记内容将显示在这里"
+            app:layout_constraintTop_toBottomOf="@id/diaryTitle"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/diaryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="日记日期"
+            app:layout_constraintTop_toBottomOf="@id/diaryContent"
+            android:layout_marginTop="16dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/diaryPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="日记地点将显示在这里"
+            app:layout_constraintTop_toBottomOf="@id/diaryDate"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/diaryWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="天气信息将显示在这里"
+            app:layout_constraintBaseline_toBottomOf="@id/diaryPlace"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/diaryImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/diaryWeather"
+            android:layout_marginTop="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

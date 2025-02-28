@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/titleEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="日记标题"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/contentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="日记内容"
+            android:minLines="10"
+            app:layout_constraintTop_toBottomOf="@id/titleEditText"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/selectImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择本地图片"
+            app:layout_constraintTop_toBottomOf="@id/contentEditText"
+            android:layout_marginTop="16dp"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/networkImageUrlEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="输入网络图片 URL"
+            app:layout_constraintTop_toBottomOf="@id/selectImageButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addNetworkImageButton"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/addNetworkImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加网络图片"
+            app:layout_constraintTop_toBottomOf="@id/selectImageButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <ImageView
+            android:id="@+id/selectedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/networkImageUrlEditText"
+            android:layout_marginTop="16dp" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/selectedImageView"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="地点信息将显示在这里"
+            app:layout_constraintTop_toBottomOf="@id/calendarView"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/weatherTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="天气信息将显示在这里"
+            app:layout_constraintTop_toBottomOf="@id/locationTextView"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/saveDiaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存日记"
+            app:layout_constraintTop_toBottomOf="@id/weatherTextView"
+            android:layout_marginTop="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
